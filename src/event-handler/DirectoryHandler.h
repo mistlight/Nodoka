@@ -7,6 +7,8 @@
 
 #include <QtCore>
 #include <QtSql>
+#include <src/model/Audiobook.h>
+#include <src/model/AudiobookFile.h>
 
 class DirectoryHandler : public QObject {
     Q_OBJECT
