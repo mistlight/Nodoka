@@ -15,6 +15,10 @@ installing `gl` via:
 sudo apt-get install build-essential libgl1-mesa-dev
 ```
 
+## Additional Environment Variables
+
+May need to set `DYLD_LIBRARY_PATH` and `VLC_PLUGIN_PATH` env vars.
+
 # License
 
 See LICENSE
