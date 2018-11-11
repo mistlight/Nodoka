@@ -13,6 +13,7 @@
 #include "Setting.h"
 #include <QFile>
 #include <src/proxy-objects/ProxyManager.h>
+#include <include/vlc_input.h>
 
 namespace Core {
     class ConcretePlayer : public QObject {
@@ -77,7 +78,7 @@ namespace Core {
         bool canLoadMedia(QSqlRecord record);
 
     signals:
-        void stateChanged(libvlc_state_t newState);
+        void stateChanged(input_state_e newState);
         void timeProgressed(libvlc_time_t time);
         void parsedStatusChanged(bool isParsed);
         void currentFileFinished();

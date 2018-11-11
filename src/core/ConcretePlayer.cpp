@@ -8,6 +8,7 @@
 #include "ConcretePlayer.h"
 #include <QTextCodec>
 #include <iostream>
+#include <include/vlc_input.h>
 
 
 Core::ConcretePlayer::ConcretePlayer(Setting* setting, std::shared_ptr<ProxyManager> manager) {
@@ -222,7 +223,7 @@ void Core::ConcretePlayer::setupMediaCallbacks() {
                         libvlc_MediaStateChanged,
                         (libvlc_callback_t) [](const struct libvlc_event_t * event, void *data) {
                             auto player = static_cast<ConcretePlayer*>(data);
-                            auto newState = event->u.media_state_changed.new_state;
+                            auto newState = (input_state_e)event->u.media_state_changed.new_state;
                             emit player->stateChanged(newState);
                         },
                         this);
