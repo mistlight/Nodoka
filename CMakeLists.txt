@@ -57,7 +57,7 @@ elseif(WIN32)
     set(PLATFORM_LINKS "ntdll")
 endif()
 
-FILE(GLOB_RECURSE LibFiles "src/*.h")
+FILE(GLOB_RECURSE LibFiles "src/*.h" "src/*.hpp")
 add_custom_target(headers SOURCES ${LibFiles})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
